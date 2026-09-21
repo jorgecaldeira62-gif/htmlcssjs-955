@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Jurídico - Editor + IA + GitHub</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Editor de código jurídico com IA, GitHub e geração de APK">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ESTRUTURA BASE -->
+<div class="container">
+    <header id="header"></header>
+    <main id="main">
+        <aside id="sidebar"></aside>
+        <div id="content"></div>
+    </main>
+</div>
+
+<!-- MODALS -->
+<div id="modalsContainer"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- BIBLIOTECAS EXTERNAS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/file-saver/2.0.5/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jschardet/2.0.1/jschardet.min.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- CONFIGURAÇÃO E BASE -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/config.js"></script>
+<script src="js/base.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- COMPONENTES -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/components/header.js"></script>
+<script src="js/components/sidebar.js"></script>
+<script src="js/components/editor.js"></script>
+<script src="js/components/pages.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- MÓDULOS PRINCIPAIS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/modules/appState.js"></script>
+<script src="js/modules/modalManager.js"></script>
+<script src="js/modules/projectManager.js"></script>
+<script src="js/modules/editorManager.js"></script>
+<script src="js/modules/navigationManager.js"></script>
+<script src="js/modules/importExport.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- MÓDULOS DE FUNCIONALIDADE -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/modules/projetos.js"></script>
+<script src="js/modules/editor.js"></script>
+<script src="js/modules/repositorio.js"></script>
+<script src="js/modules/pwa.js"></script>
+<script src="js/modules/sincronizacao.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- MÓDULOS DE VALIDAÇÃO E GERAÇÃO -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/modules/validador.js"></script>
+<script src="js/modules/gerador-icones.js"></script>
+<script src="js/modules/gerador-workflow.js"></script>
+<script src="js/modules/gerador-eas.js"></script>
+<script src="js/modules/gerador-desktop.js"></script>
+<script src="js/modules/gerador-capacitor.js"></script>
+<script src="js/modules/gerador-eas-workflow.js"></script>
+<script src="js/modules/gerador-electron-workflow.js"></script>
+<script src="js/modules/gerador.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- MÓDULOS DE IA E SCRIPTS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/modules/ia.js"></script>
+<script src="js/modules/gerador-batch.js"></script>
+<script src="js/modules/parser-markdown.js"></script>
+<script src="js/modules/gerador-html-completo.js"></script>
+<script src="js/modules/gerador-html-interativo.js"></script>
+<script src="js/modules/gerador-playground.js"></script>
+<script src="js/modules/guia-interativo.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- APP PRINCIPAL -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
