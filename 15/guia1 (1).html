@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Jurídico - Editor + IA + GitHub</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Editor de código jurídico com IA, GitHub e geração de APK">
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main"></main>
+</div>
+
+<!-- MODALS CONTAINER -->
+<div id="modalsContainer"></div>
+
+<!-- SCRIPTS -->
+<script src="styles.js"></script>
+<script src="components/header.js"></script>
+<script src="components/sidebar.js"></script>
+<script src="components/editor.js"></script>
+<script src="components/pages.js"></script>
+<script src="modules/appState.js"></script>
+<script src="modules/modalManager.js"></script>
+<script src="modules/projectManager.js"></script>
+<script src="modules/editorManager.js"></script>
+<script src="modules/navigationManager.js"></script>
+<script src="modules/importExport.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Jurídico - Integrador</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Hub integrador de projetos jurídicos">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ESTRUTURA BASE -->
+<div class="container">
+    <header id="header"></header>
+    <main id="main">
+        <aside id="sidebar"></aside>
+        <div id="content"></div>
+    </main>
+</div>
+
+<!-- MODALS -->
+<div id="modalsContainer"></div>
+
+<!-- BIBLIOTECAS EXTERNAS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/file-saver/2.0.5/FileSaver.min.js"></script>
+
+<!-- SCRIPTS (Ordem importa!) -->
+<script src="js/config.js"></script>
+<script src="js/base.js"></script>
+<script src="js/modules/projetos.js"></script>
+<script src="js/modules/editor.js"></script>
+<script src="js/modules/repositorio.js"></script>
+<script src="js/modules/pwa.js"></script>
+<script src="js/modules/sincronizacao.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
+
+Copiar
+
+
+<!-- BIBLIOTECAS EXTERNAS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/file-saver/2.0.5/FileSaver.min.js"></script>
+
+<!-- DETECÇÃO DE ENCODING -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jschardet/2.0.1/jschardet.min.js"></script>
+
+<!-- CONVERSÃO DE ENCODING -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iconv-lite/0.6.3/iconv-lite.min.js"></script>
+
+
+Agora adicione no index.html (depois de config.js):
+
+Copiar
+
+
+<!-- SCRIPTS (Ordem importa!) -->
+<script src="js/config.js"></script>
+<script src="js/encoding.js"></script>
+<script src="js/base.js"></script>
+<!-- ... resto dos scripts ... -->
+
+
+Agora adicione no index.html:
+
+Copiar
+
+<script src="js/modules/validador.js"></script>
+<script src="js/modules/gerador-icones.js"></script>
+<script src="js/modules/gerador-workflow.js"></script>
+<script src="js/modules/gerador-eas.js"></script>
+<script src="js/modules/gerador-desktop.js"></script>
+<script src="js/modules/gerador.js"></script>
+
+E adicione uma aba na navegação:
+
+Copiar
+
+<button class="nav-btn" data-module="gerador">🔧 Gerador</button>
+
+<!-- Adicione na navegação -->
+<button class="nav-btn" data-module="ia">🤖 IA</button>
+
+<!-- Adicione no content -->
+<div class="module" data-module="ia" id="iaModule"></div>
+
+<!-- Adicione nos scripts -->
+<script src="js/modules/ia.js"></script>
+
+
+<script src="js/modules/gerador-capacitor.js"></script>
+<script src="js/modules/gerador-eas-workflow.js"></script>
+<script src="js/modules/gerador-electron-workflow.js"></script>
+
+
+Agora modifique o js/modules/gerador.js para adicionar botões:
+
+Copiar
+renderValidacao() {
+    // ... código anterior ...
+    
+    html += `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 20px;">
+            <button class="btn btn-projetos" onclick="Gerador.aplicarCapacitor()" style="width: 100%;">📱 Gerar Capacitor</button>
+            <button class="btn btn-pwa" onclick="Gerador.aplicarEAS()" style="width: 100%;">🍎 Gerar EAS</button>
+            <button class="btn btn-editor" onclick="Gerador.aplicarElectron()" style="width: 100%;">🖥️ Gerar Electron</button>
+        </div>
+    `;
+}
+
+<!-- Adicione na navegação -->
+<button class="nav-btn" data-module="guia">📖 Guia Interativo</button>
+
+<!-- Adicione no content -->
+<div class="module" data-module="guia" id="guiaModule"></div>
+
+<!-- Adicione nos scripts -->
+<script src="js/modules/gerador-batch.js"></script>
+<script src="js/modules/guia-interativo.js"></script>
+
+<script src="js/modules/gerador-batch.js"></script>
+<script src="js/modules/gerador-html-completo.js"></script>
+<script src="js/modules/gerador-html-interativo.js"></script>
+<script src="js/modules/gerador-playground.js"></script>
+
+<script src="js/modules/gerador-html-puro.js"></script>
+
+<script src="js/modules/gerador-batch.js"></script>
+<script src="js/modules/gerador-html-completo
